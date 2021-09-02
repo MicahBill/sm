@@ -204,7 +204,7 @@ def runtime(secs):
     if months != 0: text += "%02d Months" % (months)
     if weeks != 0: text += " %02d Weeks" % (weeks)
     if days != 0: text += " %02d Days" % (days)
-    if hours !=  0: text +=  " %02d Hours" % (hours)
+    if hours !=  0: text += " %02d Hours" % (hours)
     if mins != 0: text += " %02d Minutes" % (mins)
     if secs != 0: text += " %02d Seconds" % (secs)
     if text[0] == " ":
@@ -263,19 +263,6 @@ def sendMention(to, text="", mids=[]):
     a001.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
 
 # 𐀀 HΞLLTΞRHΞΛD ᴄᴏʀᴘ. _______________________________________________________
-
-def sendTemplate(group, data):
-    xyz = LiffChatContext(group)
-    xyzz = LiffContext(chat=xyz)
-    view = LiffViewRequest('1602687308-GXq4Vvk9', xyzz)
-    token1 = a001.liff.issueLiffView(view)
-    url = 'https://api.line.me/message/v3/share'
-    headers = {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer %s' % token.accessToken
-    }
-    data = {"messages":[data]}
-    requests.post(url, headers=headers, data=json.dumps(data))
 
 def sendTemplate(to, data):
     xyz = LiffChatContext(to)
