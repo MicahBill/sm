@@ -5,14 +5,15 @@
 ┗━━━━━━━━━━━━━━━━━
 '''
 
+
 from linepy import *
-from liff.ttypes import LiffChatContext, LiffContext, LiffSquareChatContext, LiffNoneContext, LiffViewRequest
 from thrift import transport, protocol, server
 from akad.ttypes import *
 from akad.ttypes import Message
 from akad.ttypes import ContentType as Type
 from akad.ttypes import TalkException
 from akad.ttypes import IdentityProvider, LoginResultType, LoginRequest, LoginType
+from akad.ttypes import LiffChatContext, LiffContext, LiffSquareChatContext, LiffNoneContext, LiffViewRequest
 from akad.ttypes import ChatRoomAnnouncementContents
 from akad.ttypes import Location
 from akad.ttypes import ChatRoomAnnouncement
