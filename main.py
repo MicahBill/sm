@@ -44,14 +44,8 @@ programStart = time.time()
 
 a001 = LINE('gaweyi6210@baxima.com','@bdsaleH77')
 print('》》》》UNIT 001 READY《《《《')
-a002 = LINE('gaweyi6210@baxima.com','@bdsaleH77')
-print('》》》》UNIT 002 READY《《《《')
-a003 = LINE('gaweyi6210@baxima.com','@bdsaleH77')
-print('》》》》UNIT 003 READY《《《《\n')
 
 a001.log("[ M001D23 ]\n" + str(a001.authToken))
-a002.log("[ M002D23 ]\n" + str(a002.authToken))
-a003.log("[ M003D23 ]\n" + str(a003.authToken))
 
 print('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━')
 print('\n██████╗░██████╗░███████╗██╗\n██╔══██╗██╔══██╗██╔════╝██║\n██║░░██║██████╔╝█████╗░░██║\n██║░░██║██╔══██╗██╔══╝░░╚═╝\n██████╔╝██║░░██║███████╗██╗\n╚═════╝░╚═╝░░╚═╝╚══════╝╚═╝')
@@ -63,8 +57,8 @@ print('\n》》》》PROGRAM STARTED《《《《\n')
 M001D23 = a001.getProfile().mid
 M002D23 = a002.getProfile().mid
 M003D23 = a003.getProfile().mid
-army = [a001,a002]
-antijs = [a003]
+army = [a001]
+antijs = [a001]
 oepoll = OEPoll(a001)
 call = a001
 loop = asyncio.get_event_loop()
