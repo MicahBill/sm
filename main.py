@@ -42,10 +42,16 @@ except ImportError:
 
 programStart = time.time()
 
-a001 = LINE('gaweyi6210@baxima.com','@bdsaleH77')
+a001 = LINE('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3ZDEwZTdjOC1mNzNmLTRiZjctOTI1OC1hNWYzMjA1OGJlMjUiLCJhdWQiOiJMSU5FIiwiaWF0IjoxNjUzNTkyNDkxLCJleHAiOjE2NTQxOTcyOTEsInNjcCI6IkxJTkVfQ09SRSIsInJ0aWQiOiIyMWUxMjBmNy1mMDYzLTRmZGMtOWIwMi04YjQyMDE2OTQ1NTQiLCJyZXhwIjoxODExMjcyNDkxLCJ2ZXIiOiIzLjEiLCJhaWQiOiJ1N2FjNzhiOGY0ZDY2MDY5ZTljYTI0MTA1ZGM5MDM5N2UiLCJsc2lkIjoiOTZmN2M2YzktZDRmNy00MmY2LTk2ZjUtYjA5YjA0OTlmM2NlIiwiZGlkIjoiZTFjN2EwYzlmZWE0NmQwZDU2ZjM3YTI0ZDNlN2M4ZGEiLCJjdHlwZSI6IkFORFJPSUQiLCJjbW9kZSI6IlBSSU1BUlkiLCJjaWQiOiIwMDAwMDAwMDAwIn0.8heh18PTdKmv2bGu-UW5NYg8-BYgomjlZwXMlWckW_8')
 print('》》》》UNIT 001 READY《《《《')
+a002 = LINE('EMAIL','PASSWORD')
+print('》》》》UNIT 002 READY《《《《')
+a003 = LINE('EMAIL','PASSWORD')
+print('》》》》UNIT 003 READY《《《《\n')
 
 a001.log("[ M001D23 ]\n" + str(a001.authToken))
+a002.log("[ M002D23 ]\n" + str(a002.authToken))
+a003.log("[ M003D23 ]\n" + str(a003.authToken))
 
 print('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━')
 print('\n██████╗░██████╗░███████╗██╗\n██╔══██╗██╔══██╗██╔════╝██║\n██║░░██║██████╔╝█████╗░░██║\n██║░░██║██╔══██╗██╔══╝░░╚═╝\n██████╔╝██║░░██║███████╗██╗\n╚═════╝░╚═╝░░╚═╝╚══════╝╚═╝')
@@ -55,8 +61,10 @@ print('\n》》》》PROGRAM STARTED《《《《\n')
 # 𐀀 HΞLLTΞRHΞΛD ᴄᴏʀᴘ. _______________________________________________________
 
 M001D23 = a001.getProfile().mid
-army = [a001]
-antijs = [a001]
+M002D23 = a002.getProfile().mid
+M003D23 = a003.getProfile().mid
+army = [a001,a002]
+antijs = [a003]
 oepoll = OEPoll(a001)
 call = a001
 loop = asyncio.get_event_loop()
@@ -74,6 +82,8 @@ strictmode = status["strictmode"]
 Bots = [M001D23,M002D23,M003D23]
 Botslist = [a001,a002,a003]
 resp1 = a001.getProfile().displayName
+resp2 = a002.getProfile().displayName
+resp3 = a003.getProfile().displayName
 
 # 𐀀 HΞLLTΞRHΞΛD ᴄᴏʀᴘ. _______________________________________________________
 
@@ -335,7 +345,7 @@ def invite(group, target):
             hlthfail
     except:
         try:
-            a001.findAndAddContactsByMid(target)
+            a002.findAndAddContactsByMid(target)
             asd = a002.inviteIntoGroup(group, [target])
             if asd != None:
                 hlthfail
@@ -373,7 +383,7 @@ def reject(group):
         a001.rejectGroupInvitation(group)
     except:
         try:
-            a001.rejectGroupInvitation(group)
+            a002.rejectGroupInvitation(group)
         except:
             pass
 
@@ -381,10 +391,10 @@ def backup(group, target):
     try:
         a001.inviteIntoGroup(group, [target])
         if target == M002D23:
-            a001.acceptGroupInvitation(group)
+            a002.acceptGroupInvitation(group)
     except:
         try:
-            a001.inviteIntoGroup(group, [target])
+            a002.inviteIntoGroup(group, [target])
             if target == M001D23:
                 a001.acceptGroupInvitation(group)
         except:
@@ -394,8 +404,11 @@ def antijs(group, target):
     a003.acceptGroupInvitation(group)
     a003.kickoutFromGroup(group, [target])
     try:
-        a001.inviteIntoGroup(group, [M001D23])
+        a003.inviteIntoGroup(group, [M001D23,M002D23])
         a001.acceptGroupInvitation(group)
+        a002.acceptGroupInvitation(group)
+        time.sleep(3)
+        a003.leaveGroup(group)
     except:
         pass
 
