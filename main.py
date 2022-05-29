@@ -44,14 +44,8 @@ programStart = time.time()
 
 a001 = LINE('email', 'password')
 print('》》》》UNIT 001 READY《《《《')
-a002 = LINE('EMAIL','PASSWORD')
-print('》》》》UNIT 002 READY《《《《')
-a003 = LINE('EMAIL','PASSWORD')
-print('》》》》UNIT 003 READY《《《《\n')
 
 a001.log("[ M001D23 ]\n" + str(a001.authToken))
-a002.log("[ M002D23 ]\n" + str(a002.authToken))
-a003.log("[ M003D23 ]\n" + str(a003.authToken))
 
 print('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━')
 print('\n██████╗░██████╗░███████╗██╗\n██╔══██╗██╔══██╗██╔════╝██║\n██║░░██║██████╔╝█████╗░░██║\n██║░░██║██╔══██╗██╔══╝░░╚═╝\n██████╔╝██║░░██║███████╗██╗\n╚═════╝░╚═╝░░╚═╝╚══════╝╚═╝')
@@ -61,10 +55,9 @@ print('\n》》》》PROGRAM STARTED《《《《\n')
 # 𐀀 HΞLLTΞRHΞΛD ᴄᴏʀᴘ. _______________________________________________________
 
 M001D23 = a001.getProfile().mid
-M002D23 = a002.getProfile().mid
-M003D23 = a003.getProfile().mid
-army = [a001,a002]
-antijs = [a003]
+
+army = [a001]
+antijs = [a001]
 oepoll = OEPoll(a001)
 call = a001
 loop = asyncio.get_event_loop()
@@ -79,11 +72,11 @@ mybots = status["mybots"]
 blacklist = status["blacklist"]
 promax = status["promax"]
 strictmode = status["strictmode"]
-Bots = [M001D23,M002D23,M003D23]
-Botslist = [a001,a002,a003]
+Bots = [M001D23,M001D23,M001D23]
+Botslist = [a001,a001,a001]
 resp1 = a001.getProfile().displayName
-resp2 = a002.getProfile().displayName
-resp3 = a003.getProfile().displayName
+resp2 = a001.getProfile().displayName
+resp3 = a001.getProfile().displayName
 
 # 𐀀 HΞLLTΞRHΞΛD ᴄᴏʀᴘ. _______________________________________________________
 
@@ -318,7 +311,7 @@ def kick(group, target):
             hlthfail
     except:
         try:
-            asd = a002.kickoutFromGroup(group, [target])
+            asd = a001.kickoutFromGroup(group, [target])
             if asd != None:
                 hlthfail
         except:
@@ -331,7 +324,7 @@ def cancel(group, target):
             hlthfail
     except:
         try:
-            asd = a002.cancelGroupInvitation(group, [target])
+            asd = a001.cancelGroupInvitation(group, [target])
             if asd != None:
                 hlthfail
         except:
@@ -345,8 +338,8 @@ def invite(group, target):
             hlthfail
     except:
         try:
-            a002.findAndAddContactsByMid(target)
-            asd = a002.inviteIntoGroup(group, [target])
+            a001.findAndAddContactsByMid(target)
+            asd = a001.inviteIntoGroup(group, [target])
             if asd != None:
                 hlthfail
         except:
@@ -361,9 +354,9 @@ def lockqr(group):
             hlthfail
     except:
         try:
-            G = a002.getGroup(group)
+            G = a001.getGroup(group)
             G.preventedJoinByTicket = True
-            asd = a002.updateGroup(G)
+            asd = a001.updateGroup(G)
             if asd != None:
                 hlthfail
         except:
@@ -374,7 +367,7 @@ def join(group):
         a001.acceptGroupInvitation(group)
     except:
         try:
-            a002.acceptGroupInvitation(group)
+            a001.acceptGroupInvitation(group)
         except:
             pass
 
@@ -383,32 +376,32 @@ def reject(group):
         a001.rejectGroupInvitation(group)
     except:
         try:
-            a002.rejectGroupInvitation(group)
+            a001.rejectGroupInvitation(group)
         except:
             pass
 
 def backup(group, target):
     try:
         a001.inviteIntoGroup(group, [target])
-        if target == M002D23:
-            a002.acceptGroupInvitation(group)
+        if target == M001D23:
+            a001.acceptGroupInvitation(group)
     except:
         try:
-            a002.inviteIntoGroup(group, [target])
+            a001.inviteIntoGroup(group, [target])
             if target == M001D23:
                 a001.acceptGroupInvitation(group)
         except:
             pass
 
 def antijs(group, target):
-    a003.acceptGroupInvitation(group)
-    a003.kickoutFromGroup(group, [target])
+    a001.acceptGroupInvitation(group)
+    a001.kickoutFromGroup(group, [target])
     try:
-        a003.inviteIntoGroup(group, [M001D23,M002D23])
+        a001.inviteIntoGroup(group, [M001D23,M001D23])
         a001.acceptGroupInvitation(group)
-        a002.acceptGroupInvitation(group)
+        a001.acceptGroupInvitation(group)
         time.sleep(3)
-        a003.leaveGroup(group)
+        a001.leaveGroup(group)
     except:
         pass
 
@@ -433,12 +426,12 @@ def logspeed():
     get_profile_took = time.time() - get_profile_time_start
     return "[ Bots Speed ]\n- Took: %.3fms\n- Taken: %.5f" % (get_profile_took,get_profile_time)
     get_profile_time_start = time.time()
-    get_profile = a002.getProfile()
+    get_profile = a001.getProfile()
     get_profile_time = time.time() - get_profile_time_start
     get_profile_took = time.time() - get_profile_time_start
     return "[ Bots Speed ]\n- Took: %.3fms\n- Taken: %.5f" % (get_profile_took,get_profile_time)
     get_profile_time_start = time.time()
-    get_profile = a003.getProfile()
+    get_profile = a001.getProfile()
     get_profile_time = time.time() - get_profile_time_start
     get_profile_took = time.time() - get_profile_time_start
     return "[ Bots Speed ]\n- Took: %.3fms\n- Taken: %.5f" % (get_profile_took,get_profile_time)
@@ -456,24 +449,24 @@ def debug():
     elapsed_time = time.time() - get_profile_time_start
     return "[ Debug ]\n- Send Respon: %.5f\n- Get Profile: %.5f\n- Get Contact: %.5f\n- Get Group: %.5f" % (elapsed_time,get_profile_time,get_contact_time,get_group_time)
     get_profile_time_start = time.time()
-    get_profile = a002.getProfile()
+    get_profile = a001.getProfile()
     get_profile_time = time.time() - get_profile_time_start
     get_group_time_start = time.time()
-    get_group = a002.getGroupIdsJoined()
+    get_group = a001.getGroupIdsJoined()
     get_group_time = time.time() - get_group_time_start
     get_contact_time_start = time.time()
-    get_contact = a002.getContact(get_profile.mid)
+    get_contact = a001.getContact(get_profile.mid)
     get_contact_time = time.time() - get_contact_time_start
     elapsed_time = time.time() - get_profile_time_start
     return "[ Debug ]\n- Send Respon: %.5f\n- Get Profile: %.5f\n- Get Contact: %.5f\n- Get Group: %.5f" % (elapsed_time,get_profile_time,get_contact_time,get_group_time)
     get_profile_time_start = time.time()
-    get_profile = a003.getProfile()
+    get_profile = a001.getProfile()
     get_profile_time = time.time() - get_profile_time_start
     get_group_time_start = time.time()
-    get_group = a003.getGroupIdsJoined()
+    get_group = a001.getGroupIdsJoined()
     get_group_time = time.time() - get_group_time_start
     get_contact_time_start = time.time()
-    get_contact = a003.getContact(get_profile.mid)
+    get_contact = a001.getContact(get_profile.mid)
     get_contact_time = time.time() - get_contact_time_start
     elapsed_time = time.time() - get_profile_time_start
     return "[ Debug ]\n- Send Respon: %.5f\n- Get Profile: %.5f\n- Get Contact: %.5f\n- Get Group: %.5f" % (elapsed_time,get_profile_time,get_contact_time,get_group_time)
@@ -560,7 +553,7 @@ async def mobanzu(op):
                                 d23X_10 = threading.Thread(target=kick, args=(op.param1, op.param2)).start()
                         except:
                             try:
-                                groupqr = a002.getGroup(op.param1)
+                                groupqr = a001.getGroup(op.param1)
                                 if groupqr.preventedJoinByTicket == False:
                                     d23X_11 = threading.Thread(target=lockqr, args=(op.param1,)).start()
                                     d23X_12 = threading.Thread(target=kick, args=(op.param1, op.param2)).start()
@@ -596,25 +589,25 @@ async def mobanzu(op):
                                     json.dump(settings, fp, sort_keys=True, indent=4)
                         except:
                             try:
-                                groupn = a002.getGroup(op.param1).name
+                                groupn = a001.getGroup(op.param1).name
                                 if groupn not in settings["changeGroupName"][op.param1]:
-                                    progn = a002.getGroup(op.param1)
+                                    progn = a001.getGroup(op.param1)
                                     progn.name = settings["changeGroupName"][op.param1]
-                                    a002.updateGroup(progn)
+                                    a001.updateGroup(progn)
                                     d23X_16 = threading.Thread(target=kick, args=(op.param1, op.param2)).start()
                                 else:
-                                    progn = a002.getGroup(op.param1).name
+                                    progn = a001.getGroup(op.param1).name
                                     settings["changeGroupName"][op.param1] = progn
                                     with open('settings.json', 'w') as fp:
                                         json.dump(settings, fp, sort_keys=True, indent=4)
-                                groupp = a002.getGroup(op.param1).pictureStatus
+                                groupp = a001.getGroup(op.param1).pictureStatus
                                 if groupp not in settings["changeGroupPicture"][op.param1]:
-                                    progp = a002.getGroup(op.param1)
+                                    progp = a001.getGroup(op.param1)
                                     progp.pictureStatus = settings["changeGroupPicture"]
-                                    a002.updateGroupPicture(progp)
+                                    a001.updateGroupPicture(progp)
                                     d23X_17 = threading.Thread(target=kick, args=(op.param1, op.param2)).start()
                                 else:
-                                    progp = a002.getGroup(op.param1).pictureStatus
+                                    progp = a001.getGroup(op.param1).pictureStatus
                                     settings["changeGroupPicture"][op.param1] = progp
                                     with open('settings.json', 'w') as fp:
                                         json.dump(settings, fp, sort_keys=True, indent=4)
@@ -713,7 +706,7 @@ async def mobanzu(op):
                             d23X_39 = threading.Thread(target=reject, args=(op.param1,)).start()
                         except:
                             pass
-            if M002D23 in op.param3:
+            if M001D23 in op.param3:
                 if settings["autoJoin"] == True:
                     if op.param2 in creator or op.param2 in owner or op.param2 in admin or op.param2 in staff or op.param2 in Bots or op.param2 in mybots:
                         try:
@@ -774,7 +767,7 @@ async def mobanzu(op):
                             d23X_50 = threading.Thread(target=kick, args=(op.param1, op.param2)).start()
                         except:
                             pass
-                if op.param3 in M002D23:
+                if op.param3 in M001D23:
                     if op.param2 in creator or op.param2 in owner or op.param2 in admin or op.param2 in staff or op.param2 in Bots or op.param2 in mybots:
                         pass
                     else:
@@ -786,7 +779,7 @@ async def mobanzu(op):
                             d23X_55 = threading.Thread(target=kick, args=(op.param1, op.param2)).start()
                         except:
                             pass
-                if op.param3 in M003D23:
+                if op.param3 in M001D23:
                     if op.param2 in creator or op.param2 in owner or op.param2 in admin or op.param2 in staff or op.param2 in Bots or op.param2 in mybots:
                         pass
                     else:
@@ -826,7 +819,7 @@ async def mobanzu(op):
                             d23X_65 = threading.Thread(target=backup, args=(op.param1, op.param3)).start()
                         except:
                             pass
-                if op.param3 == M002D23:
+                if op.param3 == M001D23:
                     if op.param2 in creator or op.param2 in owner or op.param2 in admin or op.param2 in staff or op.param2 in Bots or op.param2 in mybots:
                         pass
                     else:
@@ -836,7 +829,7 @@ async def mobanzu(op):
                             d23X_68 = threading.Thread(target=backup, args=(op.param1, op.param3)).start()
                         except:
                             pass
-                if op.param3 == M003D23:
+                if op.param3 == M001D23:
                     if op.param2 in creator or op.param2 in owner or op.param2 in admin or op.param2 in staff or op.param2 in Bots or op.param2 in mybots:
                         pass
                     else:
@@ -870,10 +863,10 @@ async def mobanzu(op):
                 a001.leaveRoom(op.param1)
             except:
                 try:
-                    a002.leaveRoom(op.param1)
+                    a001.leaveRoom(op.param1)
                 except:
                     try:
-                        a003.leaveRoom(op.param1)
+                        a001.leaveRoom(op.param1)
                     except:
                         pass
         if op.type == 25 or op.type == 26:
@@ -904,16 +897,16 @@ async def mobanzu(op):
                             del settings["updatePict"][M001D23]
                             a001.updateProfilePicture(path)
                             a001.sendReplyMessage(reply,receiver,"[ Profile Picture ]\nSuccess Change Profile Picture")
-                        if M002D23 in settings["updatePict"]:
-                            path = a002.downloadObjectMsg(msg.id)
-                            del settings["updatePict"][M002D23]
-                            a002.updateProfilePicture(path)
-                            a002.sendReplyMessage(reply,receiver,"[ Profile Picture ]\nSuccess Change Profile Picture")
-                        if M003D23 in settings["updatePict"]:
-                            path = a003.downloadObjectMsg(msg.id)
-                            del settings["updatePict"][M003D23]
-                            a003.updateProfilePicture(path)
-                            a003.sendReplyMessage(reply,receiver,"[ Profile Picture ]\nSuccess Change Profile Picture")
+                        if M001D23 in settings["updatePict"]:
+                            path = a001.downloadObjectMsg(msg.id)
+                            del settings["updatePict"][M001D23]
+                            a001.updateProfilePicture(path)
+                            a001.sendReplyMessage(reply,receiver,"[ Profile Picture ]\nSuccess Change Profile Picture")
+                        if M001D23 in settings["updatePict"]:
+                            path = a001.downloadObjectMsg(msg.id)
+                            del settings["updatePict"][M001D23]
+                            a001.updateProfilePicture(path)
+                            a001.sendReplyMessage(reply,receiver,"[ Profile Picture ]\nSuccess Change Profile Picture")
                 if msg.contentType == 13:
                     if settings["addowner"] == True:
                         if sender in creator:
@@ -1120,23 +1113,23 @@ async def mobanzu(op):
                                     a001.sendContact(receiver, cont)
                         elif hlth == "ping":
                             a001.sendMessage(receiver,"PING!!!")
-                            a002.sendMessage(receiver,"PING!!!")
-                            a003.sendMessage(receiver,"PING!!!")
+                            a001.sendMessage(receiver,"PING!!!")
+                            a001.sendMessage(receiver,"PING!!!")
                         elif hlth == "respon":
                             if sender in creator or sender in owner or sender in admin or sender in staff:
                                 a001.sendReplyMessage(reply,receiver,"[ {} ]".format(resp1))
-                                a002.sendReplyMessage(reply,receiver,"[ {} ]".format(resp2))
-                                a003.sendReplyMessage(reply,receiver,"[ {} ]".format(resp3))
+                                a001.sendReplyMessage(reply,receiver,"[ {} ]".format(resp2))
+                                a001.sendReplyMessage(reply,receiver,"[ {} ]".format(resp3))
                         elif hlth == "speed":
                             if sender in creator or sender in owner or sender in admin or sender in staff:
                                 a001.sendReplyMessage(reply,receiver,logspeed())
-                                a002.sendReplyMessage(reply,receiver,logspeed())
-                                a003.sendReplyMessage(reply,receiver,logspeed())
+                                a001.sendReplyMessage(reply,receiver,logspeed())
+                                a001.sendReplyMessage(reply,receiver,logspeed())
                         elif hlth == "debug":
                             if sender in creator or sender in owner or sender in admin or sender in staff:
                                 a001.sendReplyMessage(reply,receiver,debug())
-                                a002.sendReplyMessage(reply,receiver,debug())
-                                a003.sendReplyMessage(reply,receiver,debug())
+                                a001.sendReplyMessage(reply,receiver,debug())
+                                a001.sendReplyMessage(reply,receiver,debug())
                         elif hlth == "ginfo":
                             if sender in creator or sender in owner or sender in admin or sender in staff:
                                 group = a001.getGroup(receiver)
@@ -1187,17 +1180,17 @@ async def mobanzu(op):
                                 if spl == "1":
                                     a001.leaveGroup(receiver)
                                 if spl == "2":
-                                    a002.leaveGroup(receiver)
+                                    a001.leaveGroup(receiver)
                                 if spl == "3":
-                                    a003.leaveGroup(receiver)
+                                    a001.leaveGroup(receiver)
                         elif hlth == "join":
                             if sender in creator or sender in owner or sender in admin:
                                 G = a001.getGroup(receiver)
                                 G.preventedJoinByTicket = False
                                 a001.updateGroup(G)
                                 links = a001.reissueGroupTicket(receiver)
-                                a002.acceptGroupInvitationByTicket(receiver,links)
-                                a003.acceptGroupInvitationByTicket(receiver,links)
+                                a001.acceptGroupInvitationByTicket(receiver,links)
+                                a001.acceptGroupInvitationByTicket(receiver,links)
                                 G = a001.getGroup(receiver)
                                 G.preventedJoinByTicket = True
                                 a001.updateGroup(G)
@@ -1529,8 +1522,8 @@ async def mobanzu(op):
                                     msgs += "\n┗━ Total [ %i ] Group" % len(getg)
                                     a001.sendReplyMessage(reply,receiver,"{}".format(str(msgs)))
                                 if spl == "2":
-                                    group = a002.getGroupIdsJoined()
-                                    getg = a002.getGroups(group)
+                                    group = a001.getGroupIdsJoined()
+                                    getg = a001.getGroups(group)
                                     num = 1
                                     msgs = "┏━ Group List"
                                     msgs += "\n┣━━━━ {}".format(resp2)
@@ -1538,10 +1531,10 @@ async def mobanzu(op):
                                        msgs += "\n┣ %i. %s" % (num, ids.name) + " (" + str(len(ids.members)) + ")"
                                        num = (num+1)
                                     msgs += "\n┗━ Total [ %i ] Group" % len(getg)
-                                    a002.sendReplyMessage(reply,receiver,"{}".format(str(msgs)))
+                                    a001.sendReplyMessage(reply,receiver,"{}".format(str(msgs)))
                                 if spl == "3":
-                                    group = a003.getGroupIdsJoined()
-                                    getg = a003.getGroups(group)
+                                    group = a001.getGroupIdsJoined()
+                                    getg = a001.getGroups(group)
                                     num = 1
                                     msgs = "┏━ Group List"
                                     msgs += "\n┣━━━━ {}".format(resp3)
@@ -1549,7 +1542,7 @@ async def mobanzu(op):
                                        msgs += "\n┣ %i. %s" % (num, ids.name) + " (" + str(len(ids.members)) + ")"
                                        num = (num+1)
                                     msgs += "\n┗━ Total [ %i ] Group" % len(getg)
-                                    a003.sendReplyMessage(reply,receiver,"{}".format(str(msgs)))
+                                    a001.sendReplyMessage(reply,receiver,"{}".format(str(msgs)))
                         elif hlth == "memberlist":
                             if sender in creator or sender in owner or sender in admin or sender in staff:
                                 getg = a001.getGroup(receiver)
@@ -1645,13 +1638,13 @@ async def mobanzu(op):
                                         status["strictmode"].append(receiver)
                                         a001.sendReplyMessage(reply,receiver,"[ Strict Mode ]\nAccess Granted - Strict Mode Enable")
                                         try:
-                                            a001.inviteIntoGroup(receiver,[M003D23])
+                                            a001.inviteIntoGroup(receiver,[M001D23])
                                         except:
                                             try:
-                                                a002.inviteIntoGroup(receiver,[M003D23])
+                                                a001.inviteIntoGroup(receiver,[M001D23])
                                             except:
                                                 try:
-                                                    a003.leaveGroup(receiver)
+                                                    a001.leaveGroup(receiver)
                                                 except:
                                                     pass
                                 if spl == "off":
@@ -1659,7 +1652,7 @@ async def mobanzu(op):
                                         status["strictmode"].remove(receiver)
                                         a001.sendReplyMessage(reply,receiver,"[ Strict Mode ]\nAccess Granted - Strict Mode Disable")
                                         try:
-                                            a003.acceptGroupInvitation(receiver)
+                                            a001.acceptGroupInvitation(receiver)
                                         except:
                                             pass
                                     else:
@@ -1675,24 +1668,24 @@ async def mobanzu(op):
                                 if has1 == "OK":sil1 = "Normal"
                                 else:sil1 = "Down!"
                                 a001.sendReplyMessage(reply, receiver, "[ Bots Status ]\n- Invite: {}\n- Kick: {}".format(sil1,sil))
-                                try:a002.inviteIntoGroup(to, [M002D23]);has = "OK"
+                                try:a001.inviteIntoGroup(to, [M001D23]);has = "OK"
                                 except:has = "NOT"
-                                try:a002.kickoutFromGroup(to, [M002D23]);has1 = "OK"
+                                try:a001.kickoutFromGroup(to, [M001D23]);has1 = "OK"
                                 except:has1 = "NOT"
                                 if has == "OK":sil = "Normal"
                                 else:sil = "Down!"
                                 if has1 == "OK":sil1 = "Normal"
                                 else:sil1 = "Down!"
-                                a002.sendReplyMessage(reply, receiver, "[ Bots Status ]\n- Invite: {}\n- Kick: {}".format(sil1,sil))
-                                try:a003.inviteIntoGroup(to, [M003D23]);has = "OK"
+                                a001.sendReplyMessage(reply, receiver, "[ Bots Status ]\n- Invite: {}\n- Kick: {}".format(sil1,sil))
+                                try:a001.inviteIntoGroup(to, [M001D23]);has = "OK"
                                 except:has = "NOT"
-                                try:a003.kickoutFromGroup(to, [M003D23]);has1 = "OK"
+                                try:a001.kickoutFromGroup(to, [M001D23]);has1 = "OK"
                                 except:has1 = "NOT"
                                 if has == "OK":sil = "Normal"
                                 else:sil = "Down!"
                                 if has1 == "OK":sil1 = "Normal"
                                 else:sil1 = "Down!"
-                            a003.sendReplyMessage(reply, receiver, "[ Bots Status ]\n- Invite: {}\n- Kick: {}".format(sil1,sil))
+                            a001.sendReplyMessage(reply, receiver, "[ Bots Status ]\n- Invite: {}\n- Kick: {}".format(sil1,sil))
                         elif hlth.startswith("changename:1 "):
                             if sender in creator or sender in owner:
                                 sep = text.split(" ")
@@ -1709,23 +1702,23 @@ async def mobanzu(op):
                                 sep = text.split(" ")
                                 name = text.replace(sep[0] + " ","")
                                 if len(name) <= 20:
-                                    dname = a002.getProfile()
+                                    dname = a001.getProfile()
                                     dname.displayName = name
-                                    a002.updateProfile(dname)
-                                    a002.sendReplyMessage(reply,receiver,"[ Display Name ]\nDisplay Name Changed To {}".format(str(name)))
+                                    a001.updateProfile(dname)
+                                    a001.sendReplyMessage(reply,receiver,"[ Display Name ]\nDisplay Name Changed To {}".format(str(name)))
                                 else:
-                                     a002.sendReplyMessage(reply,receiver,"[ Display Name ]\nAccess Limited For Owner Only")
+                                     a001.sendReplyMessage(reply,receiver,"[ Display Name ]\nAccess Limited For Owner Only")
                         elif hlth.startswith("changename:3 "):
                             if sender in creator or sender in owner:
                                 sep = text.split(" ")
                                 name = text.replace(sep[0] + " ","")
                                 if len(name) <= 20:
-                                    dname = a003.getProfile()
+                                    dname = a001.getProfile()
                                     dname.displayName = name
-                                    a003.updateProfile(dname)
-                                    a003.sendReplyMessage(reply,receiver,"[ Display Name ]\nDisplay Name Changed To {}".format(str(name)))
+                                    a001.updateProfile(dname)
+                                    a001.sendReplyMessage(reply,receiver,"[ Display Name ]\nDisplay Name Changed To {}".format(str(name)))
                             else:
-                                a003.sendReplyMessage(reply,receiver,"[ Display Name ]\nAccess Limited For Owner Only")
+                                a001.sendReplyMessage(reply,receiver,"[ Display Name ]\nAccess Limited For Owner Only")
                         elif hlth.startswith("changename:all "):
                             if sender in creator or sender in owner:
                                 sep = text.split(" ")
@@ -1735,14 +1728,14 @@ async def mobanzu(op):
                                     dname1.displayName = name
                                     a001.updateProfile(dname1)
                                     a001.sendReplyMessage(reply,receiver,"[ Display Name ]\nDisplay Name Changed To {}".format(str(name)))
-                                    dname2 = a002.getProfile()
+                                    dname2 = a001.getProfile()
                                     dname2.displayName = name
-                                    a002.updateProfile(dname2)
-                                    a002.sendReplyMessage(reply,receiver,"[ Display Name ]\nDisplay Name Changed To {}".format(str(name)))
-                                    dname3 = a003.getProfile()
+                                    a001.updateProfile(dname2)
+                                    a001.sendReplyMessage(reply,receiver,"[ Display Name ]\nDisplay Name Changed To {}".format(str(name)))
+                                    dname3 = a001.getProfile()
                                     dname3.displayName = name
-                                    a003.updateProfile(dname3)
-                                    a003.sendReplyMessage(reply,receiver,"[ Display Name ]\nDisplay Name Changed To {}".format(str(name)))
+                                    a001.updateProfile(dname3)
+                                    a001.sendReplyMessage(reply,receiver,"[ Display Name ]\nDisplay Name Changed To {}".format(str(name)))
                             else:
                                 for a in Botslist:
                                     a.sendReplyMessage(reply,receiver,"[ Display Name ]\nAccess Limited For Owner Only")
@@ -1762,23 +1755,23 @@ async def mobanzu(op):
                                 sep = text.split(" ")
                                 name = text.replace(sep[0] + " ","")
                                 if len(name) <= 500:
-                                    bio = a002.getProfile()
+                                    bio = a001.getProfile()
                                     bio.statusMessage = name
-                                    a002.updateProfile(bio)
-                                    a002.sendReplyMessage(reply,receiver,"[ Status Message ]\nStatus Message Changed To {}".format(str(name)))
+                                    a001.updateProfile(bio)
+                                    a001.sendReplyMessage(reply,receiver,"[ Status Message ]\nStatus Message Changed To {}".format(str(name)))
                             else:
-                                a002.sendReplyMessage(reply,receiver,"[ Status Message ]\nAccess Limited For Owner Only")
+                                a001.sendReplyMessage(reply,receiver,"[ Status Message ]\nAccess Limited For Owner Only")
                         elif hlth.startswith("changebio:3 "):
                             if sender in creator or sender in owner:
                                 sep = text.split(" ")
                                 name = text.replace(sep[0] + " ","")
                                 if len(name) <= 500:
-                                    bio = a003.getProfile()
+                                    bio = a001.getProfile()
                                     bio.statusMessage = name
-                                    a003.updateProfile(bio)
-                                    a003.sendReplyMessage(reply,receiver,"[ Status Message ]\nStatus Message Changed To {}".format(str(name)))
+                                    a001.updateProfile(bio)
+                                    a001.sendReplyMessage(reply,receiver,"[ Status Message ]\nStatus Message Changed To {}".format(str(name)))
                             else:
-                                a003.sendReplyMessage(reply,receiver,"[ Status Message ]\nAccess Limited For Owner Only")
+                                a001.sendReplyMessage(reply,receiver,"[ Status Message ]\nAccess Limited For Owner Only")
                         elif hlth.startswith("changebio:all "):
                             if sender in creator or sender in owner:
                                 sep = text.split(" ")
@@ -1788,14 +1781,14 @@ async def mobanzu(op):
                                     bio1.statusMessage = name
                                     a001.updateProfile(bio1)
                                     a001.sendReplyMessage(reply,receiver,"[ Status Message ]\nStatus Message Changed To {}".format(str(name)))
-                                    bio2 = a002.getProfile()
+                                    bio2 = a001.getProfile()
                                     bio2.statusMessage = name
-                                    a002.updateProfile(bio2)
-                                    a002.sendReplyMessage(reply,receiver,"[ Status Message ]\nStatus Message Changed To {}".format(str(name)))
-                                    bio3 = a003.getProfile()
+                                    a001.updateProfile(bio2)
+                                    a001.sendReplyMessage(reply,receiver,"[ Status Message ]\nStatus Message Changed To {}".format(str(name)))
+                                    bio3 = a001.getProfile()
                                     bio3.statusMessage = name
-                                    a003.updateProfile(bio3)
-                                    a003.sendReplyMessage(reply,receiver,"[ Status Message ]\nStatus Message Changed To {}".format(str(name)))
+                                    a001.updateProfile(bio3)
+                                    a001.sendReplyMessage(reply,receiver,"[ Status Message ]\nStatus Message Changed To {}".format(str(name)))
                             else:
                                 for a in Botslist:
                                     a.sendReplyMessage(reply,receiver,"[ Status Message ]\nAccess Limited For Owner Only")
@@ -1806,15 +1799,15 @@ async def mobanzu(op):
                                     settings["updatePict"][M001D23] = True
                                     a001.sendReplyMessage(reply,receiver,"[ Profile Picture ]\nPlease Send Picture To Use")
                                 if spl == "2":
-                                    settings["updatePict"][M002D23] = True
-                                    a002.sendReplyMessage(reply,receiver,"[ Profile Picture ]\nPlease Send Picture To Use")
+                                    settings["updatePict"][M001D23] = True
+                                    a001.sendReplyMessage(reply,receiver,"[ Profile Picture ]\nPlease Send Picture To Use")
                                 if spl == "3":
-                                    settings["updatePict"][M003D23] = True
-                                    a003.sendReplyMessage(reply,receiver,"[ Profile Picture ]\nPlease Send Picture To Use")
+                                    settings["updatePict"][M001D23] = True
+                                    a001.sendReplyMessage(reply,receiver,"[ Profile Picture ]\nPlease Send Picture To Use")
                                 if spl == "all":
                                     settings["updatePict"][M001D23] = True
-                                    settings["updatePict"][M002D23] = True
-                                    settings["updatePict"][M003D23] = True
+                                    settings["updatePict"][M001D23] = True
+                                    settings["updatePict"][M001D23] = True
                                     for a in Botslist:
                                         a.sendReplyMessage(reply,receiver,"[ Profile Picture ]\nPlease Send Picture To Use")
                             else:
@@ -1862,7 +1855,7 @@ async def mobanzu(op):
             if op.type == 15: print ("[ 15 ] NOTIFIED LEAVE GROUP")
             else: print ("[ 128 ] NOTIFIED DELETE SELF FROM CHAT")
             if op.param1 in status["strictmode"]:
-                if op.param2 == M003D23:
+                if op.param2 == M001D23:
                     try:
                         strict = threading.Thread(target=invite, args=(op.param1, op.param2)).start()
                     except:
