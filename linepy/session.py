@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from thrift.transport import THttpClient
 from thrift.protocol import TCompactProtocol
-from liffpy import LiffService
+from liff import LiffService
 from akad import AuthService, TalkService, ChannelService, CallService, SquareService, ShopService
 
 class Session:
