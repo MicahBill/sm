@@ -42,7 +42,7 @@ except ImportError:
 
 programStart = time.time()
 
-a001 = LINE('email', 'password')
+a001 = LINE('gaweyi6210@baxima.com', '@bdsaleH77')
 print('》》》》UNIT 001 READY《《《《')
 
 a001.log("[ M001D23 ]\n" + str(a001.authToken))
