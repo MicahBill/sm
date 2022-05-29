@@ -55,8 +55,6 @@ print('\n》》》》PROGRAM STARTED《《《《\n')
 # 𐀀 HΞLLTΞRHΞΛD ᴄᴏʀᴘ. _______________________________________________________
 
 M001D23 = a001.getProfile().mid
-M002D23 = a002.getProfile().mid
-M003D23 = a003.getProfile().mid
 army = [a001]
 antijs = [a001]
 oepoll = OEPoll(a001)
@@ -76,8 +74,6 @@ strictmode = status["strictmode"]
 Bots = [M001D23,M002D23,M003D23]
 Botslist = [a001,a002,a003]
 resp1 = a001.getProfile().displayName
-resp2 = a002.getProfile().displayName
-resp3 = a003.getProfile().displayName
 
 # 𐀀 HΞLLTΞRHΞΛD ᴄᴏʀᴘ. _______________________________________________________
 
@@ -339,7 +335,7 @@ def invite(group, target):
             hlthfail
     except:
         try:
-            a002.findAndAddContactsByMid(target)
+            a001.findAndAddContactsByMid(target)
             asd = a002.inviteIntoGroup(group, [target])
             if asd != None:
                 hlthfail
@@ -377,7 +373,7 @@ def reject(group):
         a001.rejectGroupInvitation(group)
     except:
         try:
-            a002.rejectGroupInvitation(group)
+            a001.rejectGroupInvitation(group)
         except:
             pass
 
@@ -385,10 +381,10 @@ def backup(group, target):
     try:
         a001.inviteIntoGroup(group, [target])
         if target == M002D23:
-            a002.acceptGroupInvitation(group)
+            a001.acceptGroupInvitation(group)
     except:
         try:
-            a002.inviteIntoGroup(group, [target])
+            a001.inviteIntoGroup(group, [target])
             if target == M001D23:
                 a001.acceptGroupInvitation(group)
         except:
@@ -398,11 +394,8 @@ def antijs(group, target):
     a003.acceptGroupInvitation(group)
     a003.kickoutFromGroup(group, [target])
     try:
-        a003.inviteIntoGroup(group, [M001D23,M002D23])
+        a001.inviteIntoGroup(group, [M001D23])
         a001.acceptGroupInvitation(group)
-        a002.acceptGroupInvitation(group)
-        time.sleep(3)
-        a003.leaveGroup(group)
     except:
         pass
 
