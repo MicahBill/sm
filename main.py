@@ -225,7 +225,7 @@ def logError(text):
     with open("logError.txt","a") as error:
         error.write("\n[ {} ] {}".format(str(time), text))
         
-    if text.startswith(".broadcast: ") or cmd.startswith(rname + "broadcast: "):
+    if text(".broadcast: ")
         bc = text.split("broadcast: ")[1]
         groups = a001.getGroupIdsJoined()
         allGc = a001.getGroups(groups)
