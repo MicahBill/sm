@@ -224,16 +224,15 @@ def logError(text):
     time = "{}, {} - {} - {} | {}".format(str(hasil), str(inihari.strftime('%d')), str(bln), str(inihari.strftime('%Y')), str(inihari.strftime('%H:%M:%S')))
     with open("logError.txt","a") as error:
         error.write("\n[ {} ] {}".format(str(time), text))
-
-
-            if cmd.startswith(".broadcast: ") or cmd.startswith(rname + "broadcast: "):
-        bc = cmd.split("broadcast: ")[1]
+        
+    if text.startswith(".broadcast: ") or cmd.startswith(rname + "broadcast: "):
+        bc = text.split("broadcast: ")[1]
         groups = a001.getGroupIdsJoined()
         allGc = a001.getGroups(groups)
         youBc = "「   Broadcast Message   」\nSender: @! \nSupport: https://{}\nBroadcasted: {} Groups\n────────────────\n{}".format(host,len(allGc),bc)
         for x in range(len(allGc)):
             a001.sendMention(allGc[x].id, youBc,[mid])                           
-            a001.sendReplyMessage(id,to,"تم ارسال رسالتك للقروبات التي لديك {} groups.".format(len(allGc)))
+            a001.sendReplyMessage(id,to,"Done ✅ {} groups.".format(len(allGc)))
 
 # 𐀀 HΞLLTΞRHΞΛD ᴄᴏʀᴘ. _______________________________________________________
 
