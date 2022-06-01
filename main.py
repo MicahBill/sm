@@ -224,18 +224,6 @@ def logError(text):
     time = "{}, {} - {} - {} | {}".format(str(hasil), str(inihari.strftime('%d')), str(bln), str(inihari.strftime('%Y')), str(inihari.strftime('%H:%M:%S')))
     with open("logError.txt","a") as error:
         error.write("\n[ {} ] {}".format(str(time), text))
-        
-    if ".broadcast: " in text:
-        bc = text.split("broadcast: ")[1]
-        groups = a001.getGroupIdsJoined()
-        allGc = a001.getGroups(groups)
-        youBc = "「   Broadcast Message   」\nSender: @! \nSupport: https://{}\nBroadcasted: {} Groups\n────────────────\n{}".format(host,len(allGc),bc)
-        for x in range(len(allGc)):
-            a001.sendMention(allGc[x].id, youBc,[mid])                           
-            a001.sendReplyMessage(id,to,"Done ✅ {} groups.".format(len(allGc)))
-    else:
-        a001.sendMention(allGc[x].id, youBc,[mid])
-        a001.sendReplyMessage("you have no groups!")
 
 # 𐀀 HΞLLTΞRHΞΛD ᴄᴏʀᴘ. _______________________________________________________
 
@@ -1854,6 +1842,18 @@ async def mobanzu(op):
                                             d23X_73 = threading.Thread(target=invite, args=(receiver, ls)).start()
                                         except:
                                             pass
+
+                        elif hlth.startswith("broadcast: "):
+                            if sender in creator:
+                                    bc = text.split("broadcast: ")[1]
+                                    groups = a001.getGroupIdsJoined()
+                                    allGc = a001.getGroups(groups)
+                                    youBc = "「   Broadcast Message   」\nSender: @! \nSupport: https://{}\nBroadcasted: {} Groups\n────────────────\n{}".format(host,len(allGc),bc)
+                                    for x in range(len(allGc)):
+                                        a001.sendMention(allGc[x].id, youBc,[mid])                           
+                                        a001.sendReplyMessage(id,to,"Done ✅ {} groups.".format(len(allGc)))
+                                        pass
+
                         elif hlth.startswith("invto "):
                             if sender in creator or sender in owner:
                                 cond = text.split(" ")
