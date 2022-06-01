@@ -233,6 +233,9 @@ def logError(text):
         for x in range(len(allGc)):
             a001.sendMention(allGc[x].id, youBc,[mid])                           
             a001.sendReplyMessage(id,to,"Done ✅ {} groups.".format(len(allGc)))
+    else:
+        a001.sendMention(allGc[x].id, youBc,[mid])
+        a001.sendReplyMessage("you have no groups!")
 
 # 𐀀 HΞLLTΞRHΞΛD ᴄᴏʀᴘ. _______________________________________________________
 
