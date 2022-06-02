@@ -1848,9 +1848,8 @@ async def mobanzu(op):
                                     bc = text.split("broadcast: ")[1]
                                     groups = a001.getGroupIdsJoined()
                                     allGc = a001.getGroups(groups)
-                                    youBc = "برودكاست ".format((allGc),bc)
-                                    for x in range(len(allGc)):
-                                        a001.sendMention(allGc[x].id, youBc,[mid])                           
+                                    youBc = "BroadCast ..".format((allGc),bc)
+                                    for x in range(len(allGc)):       
                                         a001.sendReplyMessage(id,to,"Done ✅ {} groups.".format(len(allGc)))
                                         pass
 
